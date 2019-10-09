@@ -20,16 +20,16 @@ int main() {
 	hugeInteger2.output();
 	zero.output();
 
-	cout << "\nhugeInteger1 = hugeInteger2 : " << hugeInteger1.isEqualTo(hugeInteger2) << "\n";
-	cout << "hugeInteger1 != hugeInteger2 : " << hugeInteger1.isNotEqualTo(hugeInteger2) << "\n";
-	cout << "hugeInteger1 > hugeInteger2 : " << hugeInteger1.isGreaterThan(hugeInteger2) << "\n";
-	cout << "hugeInteger1 < hugeInteger2 : " << hugeInteger1.isLessThan(hugeInteger2) << "\n";
-	cout << "hugeInteger1 >= hugeInteger2 : " << hugeInteger1.isGreaterThanOrEqualTo(hugeInteger2) << "\n";
-	cout << "hugeInteger1 <= hugeInteger2 : " << hugeInteger1.isLessThanOrEqualTo(hugeInteger2) << "\n\n";
+	cout << "\nhugeInteger1 = hugeInteger2 : " << (hugeInteger1.isEqualTo(hugeInteger2) ? "true" : "false") << "\n";
+	cout << "hugeInteger1 != hugeInteger2 : " << (hugeInteger1.isNotEqualTo(hugeInteger2) ? "true" : "false") << "\n";
+	cout << "hugeInteger1 > hugeInteger2 : " << (hugeInteger1.isGreaterThan(hugeInteger2) ? "true" : "false") << "\n";
+	cout << "hugeInteger1 < hugeInteger2 : " << (hugeInteger1.isLessThan(hugeInteger2) ? "true" : "false") << "\n";
+	cout << "hugeInteger1 >= hugeInteger2 : " << (hugeInteger1.isGreaterThanOrEqualTo(hugeInteger2) ? "true" : "false") << "\n";
+	cout << "hugeInteger1 <= hugeInteger2 : " << (hugeInteger1.isLessThanOrEqualTo(hugeInteger2) ? "true" : "false") << "\n\n";
 	
-	cout << "hugeInteger1 = 0 : " << hugeInteger1.isZero() << "\n";
-	cout << "hugeInteger2 = 0 : " << hugeInteger2.isZero() << "\n";
-	cout << "zero = 0 : " << zero.isZero() << "\n\n";
+	cout << "hugeInteger1 = 0 : " << (hugeInteger1.isZero() ? "true" : "false") << "\n";
+	cout << "hugeInteger2 = 0 : " << (hugeInteger2.isZero() ? "true" : "false") << "\n";
+	cout << "zero = 0 : " << (zero.isZero() ? "true" : "false") << "\n\n";
 
 	hugeInteger1.add(hugeInteger2);
 	cout << "hugeInteger1 + hugeInteger2 = ";
