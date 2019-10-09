@@ -14,9 +14,11 @@ int main() {
 
 	Quadratic1.add(test);
 	cout << "Quadrati1c + test = " << Quadratic1.toString() << "\n";
+	Quadratic1.subtract(test);
 
 	Quadratic1.subtract(test);
 	cout << "Quadratic1 - test = " << Quadratic1.toString() << "\n";
+	Quadratic1.add(test);
 
 	cout << "Quadratic1 solve : ";
 	Quadratic1.solve();
