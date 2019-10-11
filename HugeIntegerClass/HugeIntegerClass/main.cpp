@@ -4,40 +4,27 @@
 using namespace std;
 
 int main() {
-	int array1[40]{ 1,2,3,4,5,6,7,8,9,0,9,8,7,6,5,4,3,2,1,0,1,2,3,4,5,6,7,8,9,0,9,8,7,6,5,4,3,2,1,0 };
-	int array2[40]{ 0,9,8,7,6,5,4,3,2,1,0,1,2,3,4,5,6,7,8,9,0,9,8,7,6,5,4,3,2,1,0,1,2,3,4,5,6,7,8,9 };
-	int zeroArray[40]{ 0 };
+	cout << "사용 가능한 연산자는 ==, !=, >, <, >=, <=, *, / 가 있습니다 +, - 를 이용하기 위해서는 각각 add()와 substract()를 이용해 주세요\n"
+		<< "또한, 입력값과 계산을 통한 값은 40자리를 넘지 못하므로 주의하십시오.\n\n";
 
-	HugeInteger hugeInteger1;
-	HugeInteger hugeInteger2;
-	HugeInteger zero;
+	HugeInteger hugeInteger1(20000323);
+	HugeInteger hugeInteger2("19990103");
+	HugeInteger hugeInteger3(3000);
 
-	hugeInteger1.input(array1);
-	hugeInteger2.input(array2);
-	zero.input(zeroArray);
+	cout << "hugeInteger1 = " << hugeInteger1;
+	cout << "\nhugeInteger2 = " << hugeInteger2;
 
-	hugeInteger1.output();
-	hugeInteger2.output();
-	zero.output();
+	cout << "\n\nhugeInteger1 = hugeInteger2 : " << ((hugeInteger1 == hugeInteger2) ? "true" : "false") << "\n";
+	cout << "hugeInteger1 != hugeInteger2 : " << ((hugeInteger1 != hugeInteger2) ? "true" : "false") << "\n";
+	cout << "hugeInteger1 > hugeInteger2 : " << ((hugeInteger1 > hugeInteger2) ? "true" : "false") << "\n";
+	cout << "hugeInteger1 < hugeInteger2 : " << ((hugeInteger1 < hugeInteger2) ? "true" : "false") << "\n";
+	cout << "hugeInteger1 >= hugeInteger2 : " << ((hugeInteger1 >= hugeInteger2) ? "true" : "false") << "\n";
+	cout << "hugeInteger1 <= hugeInteger2 : " << ((hugeInteger1 <= hugeInteger2) ? "true" : "false") << "\n\n";
 
-	cout << "\nhugeInteger1 = hugeInteger2 : " << (hugeInteger1.isEqualTo(hugeInteger2) ? "true" : "false") << "\n";
-	cout << "hugeInteger1 != hugeInteger2 : " << (hugeInteger1.isNotEqualTo(hugeInteger2) ? "true" : "false") << "\n";
-	cout << "hugeInteger1 > hugeInteger2 : " << (hugeInteger1.isGreaterThan(hugeInteger2) ? "true" : "false") << "\n";
-	cout << "hugeInteger1 < hugeInteger2 : " << (hugeInteger1.isLessThan(hugeInteger2) ? "true" : "false") << "\n";
-	cout << "hugeInteger1 >= hugeInteger2 : " << (hugeInteger1.isGreaterThanOrEqualTo(hugeInteger2) ? "true" : "false") << "\n";
-	cout << "hugeInteger1 <= hugeInteger2 : " << (hugeInteger1.isLessThanOrEqualTo(hugeInteger2) ? "true" : "false") << "\n\n";
-	
-	cout << "hugeInteger1 = 0 : " << (hugeInteger1.isZero() ? "true" : "false") << "\n";
-	cout << "hugeInteger2 = 0 : " << (hugeInteger2.isZero() ? "true" : "false") << "\n";
-	cout << "zero = 0 : " << (zero.isZero() ? "true" : "false") << "\n\n";
+	cout << "\nhugeInteger1 * hugeInteger2 = " << hugeInteger1 * hugeInteger2 << "\n";
 
-	hugeInteger1.add(hugeInteger2);
-	cout << "hugeInteger1 + hugeInteger2 = ";
-	hugeInteger1.output();
-	hugeInteger1.subtract(hugeInteger2);
+	cout << "\nhugeInteger3 = " << hugeInteger3;
 
-	hugeInteger1.subtract(hugeInteger2);
-	cout << "hugeInteger1 - hugeInteger2 = ";
-	hugeInteger1.output();
-	hugeInteger1.add(hugeInteger2);
+	cout << "\n\nhugeInteger1 / hugeInteger3 = " << hugeInteger1 / hugeInteger3 << "\n";
+	cout << "hugeInteger2 / hugeInteger3 = " << hugeInteger2 / hugeInteger3 << "\n";
 }

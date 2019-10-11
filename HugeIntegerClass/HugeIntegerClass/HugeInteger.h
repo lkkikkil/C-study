@@ -1,21 +1,34 @@
+#include <array>
+
 class HugeInteger
 {
-private:
-	int hugeInteger[40]{ 0 };
-
+	friend std::ostream& operator<<(std::ostream&, const HugeInteger&);
 public:
-	HugeInteger();
+	static const int digits{ 40 };
 
-	void input(int[40]);
-	void output();
-	void add(HugeInteger);
-	void subtract(HugeInteger);
+	HugeInteger(long = 0);
+	HugeInteger(const std::string&);
 
-	bool isEqualTo(HugeInteger);
-	bool isNotEqualTo(HugeInteger);
-	bool isGreaterThan(HugeInteger);
-	bool isLessThan(HugeInteger);
-	bool isGreaterThanOrEqualTo(HugeInteger);
-	bool isLessThanOrEqualTo(HugeInteger);
-	bool isZero();
+	bool isEqualTo(HugeInteger&);
+	bool isNotEqualTo(HugeInteger&);
+	bool isGreaterThan(HugeInteger&);
+	bool isLessThan(HugeInteger&);
+	bool isGreaterThanOrEqualTo(HugeInteger&);
+	bool isLessThanOrEqualTo(HugeInteger&);
+
+	bool operator == (HugeInteger&);
+	bool operator != (HugeInteger&);
+	bool operator > (HugeInteger&);
+	bool operator < (HugeInteger&);
+	bool operator >= (HugeInteger&);
+	bool operator <= (HugeInteger&);
+
+	HugeInteger add(HugeInteger&);
+	void subtract(HugeInteger&);
+
+	HugeInteger operator * (HugeInteger&);
+	HugeInteger operator / (HugeInteger&);
+
+private:
+	std::array<short, digits> integer{};
 };
