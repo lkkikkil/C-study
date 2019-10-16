@@ -1,11 +1,11 @@
 #include <iostream>
 #include <iomanip>
-#include "CommissionEmployee.h"
+#include "BasePlusCommissionEmployee.h"
 
 using namespace std;
 
 int main() {
-	CommissionEmployee employee{ "Sue", "Jones", "222-22-2222", 10000, .06 };
+	BasePlusCommissionEmployee employee{ "Sue", "Jones", "222-22-2222", 10000, .04, 300 };
 
 	cout << fixed << setprecision(2);
 	cout << "Employee information obtained by get functions : \n"
@@ -14,10 +14,10 @@ int main() {
 		<< "\nSocial security number is "
 		<< employee.getSocialSecurityNumber()
 		<< "\nGross sales is " << employee.getGrossSales()
-		<< "\nCommission rate is " << employee.getCommissionRate() << endl;
+		<< "\nCommission rate is " << employee.getCommissionRate()
+		<< "\nBase salary is " << employee.getBaseSalary() << endl;
 
-	employee.setGrossSales(8000);
-	employee.setCommissionRate(.1);
+	employee.setBaseSalary(1000);
 
 	cout << "\nUpdate employee information from function toString : \n\n"
 		<< employee.toString();
