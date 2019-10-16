@@ -6,10 +6,8 @@
 using namespace std;
 
 CommissionEmployee::CommissionEmployee(const string& first,
-	const string& last, const string& ssn, double sales, double rate) {
-	firstName = first;
-	lastName = last;
-	socialSecurityNumber = ssn;
+	const string& last, const string& ssn, double sales, double rate)
+	: firstName(first), lastName(last), socialSecurityNumber(ssn) {
 	setGrossSales(sales);
 	setCommissionRate(rate);
 }
@@ -57,15 +55,15 @@ double CommissionEmployee::getCommissionRate() const {
 }
 
 double CommissionEmployee::earnings() const {
-	return commissionRate * grossSales;
+	return getCommissionRate() * getGrossSales();
 }
 
 string CommissionEmployee::toString() const {
 	ostringstream output;
 	output << fixed << setprecision(2);
-	output << "commission employee : " << firstName << " " << lastName
-		<< "\nsocial security number : " << socialSecurityNumber
-		<< "\ngross sales : " << grossSales
-		<< "\ncommission rate : " << commissionRate;
+	output << "commission employee : " << getFirstName() << " " << getLastName()
+		<< "\nsocial security number : " << getSocialSecurityNumber()
+		<< "\ngross sales : " << getGrossSales()
+		<< "\ncommission rate : " << getCommissionRate();
 	return output.str();
 }
