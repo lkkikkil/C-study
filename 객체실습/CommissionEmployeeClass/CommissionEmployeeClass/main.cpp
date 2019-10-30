@@ -1,26 +1,38 @@
 #include <iostream>
 #include <iomanip>
+#include "CommissionEmployee.h"
 #include "BasePlusCommissionEmployee.h"
 
 using namespace std;
 
 int main() {
-	BasePlusCommissionEmployee employee{ "Sue", "Jones", "222-22-2222", 10000, .04, 300 };
+	CommissionEmployee commissionEmployee{
+		"Sue", "Jones", "222-22-2222", 10000, .06 };
+
+	BasePlusCommissionEmployee basePlusCommissionEmployee{
+		"Bob", "Lewis", "333-33-3333", 5000, .04, 300 };
 
 	cout << fixed << setprecision(2);
-	cout << "Employee information obtained by get functions : \n"
-		<< "\nFirst name is " << employee.getFirstName()
-		<< "\nLast name is " << employee.getLastName()
-		<< "\nSocial security number is "
-		<< employee.getSocialSecurityNumber()
-		<< "\nGross sales is " << employee.getGrossSales()
-		<< "\nCommission rate is " << employee.getCommissionRate()
-		<< "\nBase salary is " << employee.getBaseSalary() << endl;
 
-	employee.setBaseSalary(1000);
+	cout << "DIsplay BASE-CLASS AND DERIVED-CLASS OBJECTS:\n"
+		<< commissionEmployee.toString()
+		<< "\n\n"
+		<< basePlusCommissionEmployee.toString();
 
-	cout << "\nUpdate employee information from function toString : \n\n"
-		<< employee.toString();
+	CommissionEmployee* commissionEmployeePtr{ &commissionEmployee };
+	cout << "\n\nCALLING TOSTRING WITH BASE-CLASS POINTER TO "
+		<< "\nBASE-CLASS OBJECT INVOKES BASE-CLASS TOSTRING FUNCTION:\n"
+		<< commissionEmployeePtr->toString();
 
-	cout << "\n\nEmployee's earnings : $" << employee.earnings() << endl;
+	BasePlusCommissionEmployee* basePlusCommissionEmployeePtr{ &basePlusCommissionEmployee };
+	cout << "\n\nCALLING TOSTRING WITH DERIVED-CLASS POINTER TO "
+		<< "\nDERIVED-CLASS OBJECT INVOKES DERIVED-CLASS TOSTRING FUNCTION:\n"
+		<< basePlusCommissionEmployeePtr->toString();
+
+	commissionEmployeePtr = &basePlusCommissionEmployee;
+	cout << "\n\nCALLING TOSTRING WITH BASE-CLASS POINTER TO "
+		<< "\nDERVIED-CLASS OBJECT/nINVOKES BASE-CLASS TOSTRING"
+		<< "FUNCTION ON THAT DERIVED-CLASS OBJECT:\n"
+		<< commissionEmployeePtr->toString()
+		<< endl;
 }
