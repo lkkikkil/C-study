@@ -7,5 +7,5 @@ private:
 
 public:
 	TwoDayPackage(std::string, std::string, std::string, std::string, std::string, double, double, double);
-	double claculateCost();
+	double calculateCost();
 };

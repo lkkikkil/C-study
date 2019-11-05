@@ -7,6 +7,6 @@ TwoDayPackage::TwoDayPackage(string _name, string _address, string _city, string
 	flatFee = _flatFee;
 }
 
-double TwoDayPackage::claculateCost() {
+double TwoDayPackage::calculateCost() {
 	return Package::calculateCost() + flatFee;
 }
