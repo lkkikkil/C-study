@@ -1,3 +1,6 @@
+#ifndef PACKAGE_H
+#define PACKAGE_H
+
 #include <string>
 
 class Package
@@ -15,3 +18,5 @@ public:
 	Package(std::string, std::string, std::string, std::string, std::string, double, double);
 	double calculateCost();
 };
+
+#endif PACKAGE_H
