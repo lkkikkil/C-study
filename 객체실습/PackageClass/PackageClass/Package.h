@@ -2,7 +2,7 @@
 
 class Package
 {
-private:
+protected:
 	std::string name;
 	std::string address;
 	std::string city;
