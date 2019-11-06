@@ -9,8 +9,8 @@ public:
 	CheckingAccount(double, double);
 	virtual ~CheckingAccount() = default;
 
-	void credit(double);
-	void debit(double);
+	virtual void credit(double);
+	virtual void debit(double);
 
 private:
 	double fee;

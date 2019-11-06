@@ -9,8 +9,9 @@ public:
 
 	void setBalance(double);
 	double getBalance();
-	void credit(double);
-	void debit(double);
+	virtual void credit(double);
+	virtual void debit(double);
+	virtual double calculateInterest();
 
 private:
 	double balance;

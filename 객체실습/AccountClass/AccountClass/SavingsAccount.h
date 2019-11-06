@@ -1,7 +1,7 @@
 #ifndef SAVING_H
 #define SAVING_H
 
-#include "Account.h";
+#include "Account.h"
 
 class SavingsAccount : public Account
 {
@@ -9,7 +9,7 @@ public:
 	SavingsAccount(double, double);
 	virtual ~SavingsAccount() = default;
 
-	double calculateInterest();
+	virtual double calculateInterest();
 
 private:
 	double interestRate;

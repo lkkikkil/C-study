@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="CheckingAccount.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="SavingsAccount.cpp" />
   </ItemGroup>
   <ItemGroup>

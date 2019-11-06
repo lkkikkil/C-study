@@ -33,3 +33,7 @@ void Account::debit(double withdraw) {
 		balance -= withdraw;
 	}
 }
+
+double Account::calculateInterest() {
+	return 0.0;
+}
