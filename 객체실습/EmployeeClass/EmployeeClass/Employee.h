@@ -2,11 +2,12 @@
 #define EMPLOYEE_H
 
 #include <string>
+#include "Date.h"
 
 class Employee
 {
 public:
-	Employee(const std::string&, const std::string&, const std::string&);
+	Employee(const std::string&, const std::string&, const std::string&, int, int, int);
 	virtual ~Employee() = default;
 
 	void setFirstName(const std::string&);
@@ -25,6 +26,7 @@ private:
 	std::string firstName;
 	std::string lastName;
 	std::string socialSecurityNumber;
+	Date birthday;
 };
 
 #endif EMPLOYEE_H

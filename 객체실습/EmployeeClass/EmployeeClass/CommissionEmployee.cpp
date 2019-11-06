@@ -5,8 +5,8 @@
 
 using namespace std;
 
-CommissionEmployee::CommissionEmployee(const string& first, const string& last, const string& ssn, double sales, double rate)
-	:Employee(first, last, ssn) {
+CommissionEmployee::CommissionEmployee(const string& first, const string& last, const string& ssn, int month, int day, int year, double sales, double rate)
+	:Employee(first, last, ssn, month, day, year) {
 	setGrossSales(sales);
 	setCommissionRate(rate);
 }

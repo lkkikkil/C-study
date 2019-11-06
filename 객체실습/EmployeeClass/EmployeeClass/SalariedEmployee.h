@@ -7,7 +7,7 @@
 class SalariedEmployee : public Employee
 {
 public:
-	SalariedEmployee(const std::string&, const std::string&, const std::string&, double = 0.0);
+	SalariedEmployee(const std::string&, const std::string&, const std::string&, int, int, int, double = 0.0);
 	virtual ~SalariedEmployee() = default;
 
 	void setWeeklySalary(double);

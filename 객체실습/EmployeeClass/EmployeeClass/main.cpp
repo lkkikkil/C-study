@@ -15,11 +15,11 @@ int main() {
 	cout << fixed << setprecision(2);
 
 	SalariedEmployee salariedEmployee{
-		"John", "Smith", "111-11-1111", 800};
+		"John", "Smith", "111-11-1111", 3, 23, 2000, 800};
 	CommissionEmployee commissionEmployee{
-		"Sue", "Jones", "333-33-3333", 10000, .06 };
+		"Sue", "Jones", "333-33-3333", 1, 3, 1999, 10000, .06 };
 	BasePlusCommissionEmployee basePlusCommissionEmployee{
-		"Bob", "Lewis", "444-44-4444", 5000, .04, 300 };
+		"Bob", "Lewis", "444-44-4444", 6, 4, 1999, 5000, .04, 300 };
 
 	cout << "EMPLOYEES PROCESSED INDIVIDUALLY USING STATIC BINDING\n"
 		<< salariedEmployee.toString()

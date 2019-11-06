@@ -5,8 +5,8 @@
 
 using namespace std;
 
-BasePlusCommissionEmployee::BasePlusCommissionEmployee(const string& first, const string& last, const string& ssn, double sales, double rate, double salary)
-	: CommissionEmployee(first, last, ssn, sales, rate) {
+BasePlusCommissionEmployee::BasePlusCommissionEmployee(const string& first, const string& last, const string& ssn, int month, int day, int year, double sales, double rate, double salary)
+	: CommissionEmployee(first, last, ssn, month, day, year, sales, rate) {
 	setBaseSalary(salary);
 }
 
