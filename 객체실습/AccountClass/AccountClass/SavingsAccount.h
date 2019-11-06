@@ -7,6 +7,8 @@ class SavingsAccount : public Account
 {
 public:
 	SavingsAccount(double, double);
+	virtual ~SavingsAccount() = default;
+
 	double calculateInterest();
 
 private:
