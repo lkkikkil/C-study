@@ -25,11 +25,11 @@ void Account::credit(double add) {
 	balance += add;
 }
 
-void Account::debit(double withdarw) {
-	if (balance < withdarw) {
+void Account::debit(double withdraw) {
+	if (balance < withdraw) {
 		cout << "Debit amount exceed account balance";
 	}
 	else {
-		balance -= withdarw;
+		balance -= withdraw;
 	}
 }
