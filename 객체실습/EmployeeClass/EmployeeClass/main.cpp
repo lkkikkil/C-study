@@ -8,8 +8,7 @@
 
 using namespace std;
 
-void virtualViaPointer(const Employee* const);
-void virtualViaReference(const Employee&);
+void virtualViaPointer(const Employee* const, int);
 
 int main() {
 	cout << fixed << setprecision(2);
@@ -21,35 +20,21 @@ int main() {
 	BasePlusCommissionEmployee basePlusCommissionEmployee{
 		"Bob", "Lewis", "444-44-4444", 6, 4, 1999, 5000, .04, 300 };
 
-	cout << "EMPLOYEES PROCESSED INDIVIDUALLY USING STATIC BINDING\n"
-		<< salariedEmployee.toString()
-		<< "\nearned $" << salariedEmployee.earnings() << "\n\n"
-		<< commissionEmployee.toString()
-		<< "\nearned $" << commissionEmployee.earnings() << "\n\n"
-		<< basePlusCommissionEmployee.toString()
-		<< "\nearned $" << basePlusCommissionEmployee.earnings() << "\n\n";
-
 	vector<Employee* > employees{ &salariedEmployee, &commissionEmployee, &basePlusCommissionEmployee };
 
 	cout << "EMPLOYEES PROCESSED POLYMORPHICALLY VIA DYNAMIC BINDING\n\n";
 	
-	cout << "VIRTUAL FUNCTION CALLS MADE OFF BASE-CLASS POINTERS\n";
-	for (const Employee* employeePtr : employees) {
-		virtualViaPointer(employeePtr);
-	}
-
-	cout << "VIRTUAL FUNCTION CALLS MADE OFF BASE-CLASS REFERENCES\n";
-	for (const Employee* employeePtr : employees) {
-		virtualViaReference(*employeePtr);
+	cout << "VIRTUAL FUNCTION CALLS MADE OFF BASE-CLASS POINTERS\n\n\n";
+	for (int month = 1; month <= 12; month++) {
+		cout << month << "¿ù\n";
+		for (const Employee* employeePtr : employees) {
+			virtualViaPointer(employeePtr, month);
+		}
+		cout << "\n";
 	}
 }
 
-void virtualViaPointer(const Employee* const baseClassPtr) {
+void virtualViaPointer(const Employee* const baseClassPtr, int month) {
 	cout << baseClassPtr->toString()
-		<< "\nearned $" << baseClassPtr->earnings() << "\n\n";
-}
-
-void virtualViaReference(const Employee& baseClassRef) {
-	cout << baseClassRef.toString()
-		<< "\nearned $" << baseClassRef.earnings() << "\n\n";
+		<< "\nearned $" << baseClassPtr->earnings(month) << "\n\n";
 }

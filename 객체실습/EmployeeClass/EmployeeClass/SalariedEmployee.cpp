@@ -7,10 +7,10 @@ using namespace std;
 
 SalariedEmployee::SalariedEmployee(const string& first, const string& last, const string& ssn, int month, int day, int year, double salary)
 	: Employee(first, last, ssn, month, day, year) {
-	setWeeklySalary(salary);
+	setMonthSalary(salary);
 }
 
-void SalariedEmployee::setWeeklySalary(double salary) {
+void SalariedEmployee::setMonthSalary(double salary) {
 	if (salary < 0.0) {
 		throw invalid_argument("Weekly salary must be >= 0.0");
 	}
@@ -20,7 +20,7 @@ void SalariedEmployee::setWeeklySalary(double salary) {
 
 double SalariedEmployee::getWeeklySalary() const { return weeklySalary; }
 
-double SalariedEmployee::earnings() const { return getWeeklySalary(); }
+double SalariedEmployee::earnings(int _month) const { return getWeeklySalary() + (_month == getBirthdayMonth() ? 100 : 0); }
 
 string SalariedEmployee::toString() const {
 	ostringstream output;

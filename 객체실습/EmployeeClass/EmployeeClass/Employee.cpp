@@ -23,3 +23,7 @@ string Employee::toString() const {
 
 	return output.str();
 }
+
+int Employee::getBirthdayMonth() const {
+	return birthday.getMonth();
+}

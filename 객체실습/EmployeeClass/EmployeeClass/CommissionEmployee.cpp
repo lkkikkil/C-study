@@ -31,7 +31,7 @@ void CommissionEmployee::setCommissionRate(double rate) {
 
 double CommissionEmployee::getCommissionRate() const { return commissionRate; }
 
-double CommissionEmployee::earnings() const { return getCommissionRate() * getGrossSales(); }
+double CommissionEmployee::earnings(int _month) const { return getCommissionRate() * getGrossSales() + (_month == getBirthdayMonth() ? 100 : 0);}
 
 string CommissionEmployee::toString() const {
 	ostringstream output;

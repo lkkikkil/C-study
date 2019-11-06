@@ -94,3 +94,7 @@ ostream& operator<<(ostream& output, const Date& d) {
 	output << monthName[d.month] << ' ' << d.day << ", " << d.year;
 	return output;
 }
+
+int Date::getMonth() const {
+	return month;
+}

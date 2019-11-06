@@ -16,7 +16,7 @@ public:
 	void setGrossSales(double);
 	double getGrossSales() const;
 
-	virtual double earnings() const override;
+	virtual double earnings(int) const override;
 	virtual std::string toString() const override;
 
 private:

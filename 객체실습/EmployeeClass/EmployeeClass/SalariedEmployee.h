@@ -10,10 +10,10 @@ public:
 	SalariedEmployee(const std::string&, const std::string&, const std::string&, int, int, int, double = 0.0);
 	virtual ~SalariedEmployee() = default;
 
-	void setWeeklySalary(double);
+	void setMonthSalary(double);
 	double getWeeklySalary() const;
 
-	virtual double earnings() const override;
+	virtual double earnings(int) const override;
 	virtual std::string toString() const override;
 
 private:

@@ -20,8 +20,8 @@ void BasePlusCommissionEmployee::setBaseSalary(double salary) {
 
 double BasePlusCommissionEmployee::getBaseSalary() const { return baseSalary; }
 
-double BasePlusCommissionEmployee::earnings() const {
-	return getBaseSalary() + CommissionEmployee::earnings();
+double BasePlusCommissionEmployee::earnings(int _month) const {
+	return getBaseSalary() + CommissionEmployee::earnings(_month);
 }
 
 string BasePlusCommissionEmployee::toString() const {

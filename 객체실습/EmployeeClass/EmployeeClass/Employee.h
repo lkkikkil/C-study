@@ -19,8 +19,10 @@ public:
 	void setSocialSecurityNumber(const std::string&);
 	std::string getSocialSecurityNumber() const;
 
-	virtual double earnings() const = 0;
+	virtual double earnings(int) const = 0;
 	virtual std::string toString() const;
+
+	int getBirthdayMonth() const;
 
 private:
 	std::string firstName;
