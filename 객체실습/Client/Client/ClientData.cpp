@@ -31,7 +31,7 @@ void ClientData::setFirstName(const string& firstNameString) {
 	firstName[length] = '\0';
 }
 
-string ClientData::getLastName() const { return firstName; }
+string ClientData::getFirstName() const { return firstName; }
 
 void ClientData::setBalance(double balanceValue) {
 	balance = balanceValue;
