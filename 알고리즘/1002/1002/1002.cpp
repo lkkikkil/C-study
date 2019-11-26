@@ -12,28 +12,25 @@ int main() {
 		double r1{ 0 }, r2{ 0 };
 		cin >> x1 >> y1 >> r1 >> x2 >> y2 >> r2;
 
-		double distance{ pow(pow((x1 - x2), 2) + pow((y1 - y2), 2), 0.5) };
+		double distance{ sqrt(pow((x1 - x2), 2) + pow((y1 - y2), 2)) };
 		
 		if (distance == 0) {
-			if (r1 == 0 && r2 == 0) {
-				cout << 1;
-			}
-			else if (r1 == r2) {
-				cout << -1;
+			if (r1 == r2) {
+				cout << -1 << "\n";
 			}
 			else {
-				cout << 0;
+				cout << 0 << "\n";
 			}
 		}
 		else {
-			if (r1 + r2 > distance&& abs(r1 - r2) < distance) {
-				cout << 2;
+			if (r1 + r2 > distance && abs(r1 - r2) < distance) {
+				cout << 2 << "\n";
 			}
 			else if (r1 + r2 == distance || abs(r1 - r2) == distance) {
-				cout << 1;
+				cout << 1 << "\n";
 			}
 			else {
-				cout << 0;
+				cout << 0 << "\n";
 			}
 		}
 	}
